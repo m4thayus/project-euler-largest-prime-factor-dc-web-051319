@@ -1,7 +1,7 @@
 # Enter your procedural solution here!
 def largest_prime_factor(n)
     fact = n - 1
-    while fact > 0
+    while fact > 1
         if n % fact == 0
             puts fact
             prime = true
@@ -21,9 +21,10 @@ def largest_prime_factor(n)
 end
 
 def optimized_largest_prime_factor(n)
-    fact = n - 1
-    while fact > 0
+    fact = Math.sqrt(n).to_i
+    while fact > 1
         if n % fact == 0
+            puts fact
             prime = true
             fact_of_fact = fact - 1
             while fact_of_fact > 1
@@ -40,9 +41,10 @@ def optimized_largest_prime_factor(n)
     end
 end
 
-puts largest_prime_factor(13195)
-puts largest_prime_factor(1000000)
-puts largest_prime_factor(600851475143)
-# puts optimized_largest_prime_factor(600851475143)
-
-
+puts "Largest: #{largest_prime_factor(13195)}"
+puts "Largest: #{largest_prime_factor(20000000)}"
+# puts largest_prime_factor(600851475143)
+puts "Start Optimized Runs"
+puts "Largest: #{optimized_largest_prime_factor(13195)}"
+puts "Largest: #{optimized_largest_prime_factor(20000000)}"
+puts "Largest: #{optimized_largest_prime_factor(600851475143)}"
